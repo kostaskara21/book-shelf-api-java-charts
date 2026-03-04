@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-app
+  name: {{ .Values.app.name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: api-app
+      app: {{ .Values.app.name }}
   template:
     metadata:
       labels:
-        app: api-app
+        app: {{ .Values.app.name }}
     spec:
       containers:
-        - name: api-app
-          image: kara21/my-app:v4
+        - name: {{ .Values.app.name }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           ports:
-            - containerPort: 8080
+            - containerPort: {{ .Values.port }}
           env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres:5432/mydb
