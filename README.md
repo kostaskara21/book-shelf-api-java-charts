@@ -26,7 +26,7 @@ kubectl get svc
 kubectl port-forward svc/api-service 8080:8080
 ```
 
-Make call with  Postman:
+## Make call with  Postman:
 
 ```
 http://localhost:8080
