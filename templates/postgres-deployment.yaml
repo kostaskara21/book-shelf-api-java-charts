@@ -17,12 +17,8 @@ spec:
           image: {{ .Values.postgres.image.repository }}:{{ .Values.postgres.image.tag }}
           ports:
             - containerPort: {{ .Values.postgres.port }}
-          env:
-            - name: POSTGRES_DB
-              value: mydb
-            - name: POSTGRES_USER
-              value: myuser
-            - name: POSTGRES_PASSWORD
-              value: mypassword
+          envFrom:
+            secretRef:
+              name: pg-secret
           ports:
             - containerPort: 5432

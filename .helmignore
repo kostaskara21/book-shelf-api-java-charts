@@ -19,5 +19,7 @@
 # Various IDEs
 .project
 .idea/
+.idea/vcs.xml
+.idea/workspace.xml
 *.tmproj
 .vscode/
