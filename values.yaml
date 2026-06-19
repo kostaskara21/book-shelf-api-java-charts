@@ -7,7 +7,7 @@ metadata:
 
 image:
   repository: kara21/my-app
-  tag: v4
+  tag: v5
 
 port: 8080
 
